@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap');
+
+body {
+    margin: 0;
+    background: #f6efe7;
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+}
+
+/* COVER */
+.cover {
+    height: 100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("https://images.unsplash.com/photo-1526045612212-70caf35c14df") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.door {
+    width: 130px;
+    height: 200px;
+    background: linear-gradient(#8b5a2b, #6d3f1f);
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.knob {
+    width: 14px;
+    height: 14px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    right: 18px;
+    top: 100px;
+}
+
+.door:hover {
+    transform: scale(1.03);
+}
+
+@keyframes knock {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(-4deg); }
+    40% { transform: rotate(4deg); }
+    60% { transform: rotate(-4deg); }
+    80% { transform: rotate(4deg); }
+    100% { transform: rotate(0); }
+}
+
+.cover p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* CARD */
+.card-container {
+    display: none;
+    height: 100vh;
+    background: radial-gradient(#fdf8f3, #e8d7c5);
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 92%;
+    max-width: 950px;
+    height: 82vh;
+    background: #fffdf8;
+    display: flex;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    animation: openCard 1.6s ease forwards;
+}
+
+@keyframes openCard {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.page {
+    width: 50%;
+    padding: 35px;
+    overflow-y: auto;
+}
+
+.left {
+    border-right: 1px solid #e2d6c8;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.7rem;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.signature {
+    margin-top: 35px;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c8db7c9d6.mp3" type="audio/mpeg">
+</audio>
+
+<div class="cover" id="cover">
+    <div class="door" id="door" onclick="openCard()">
+        <div class="knob"></div>
+    </div>
+    <p>Knock to Open 💛</p>
+</div>
+
+<div class="card-container" id="cardContainer">
+    <div class="card">
+        <div class="page left">
+            <h1>Memories</h1>
+            <p>
+Once upon a time, when we were just kids,
+Every New Year, you stood outside my house...
+holding a small card and your big smile,
+with your baba by your side.
+
+Years passed. We grew up.
+But some New Year wishes never fade.
+
+I didn’t know it back then,
+but those little moments were quietly becoming memories.
+
+Innocent… simple… beautiful.
+Just like you PRESHI
+            </p>
+        </div>
+
+        <div class="page right">
+            <h1>🌸 From Then to Now 🌸</h1>
+            <p>
+This time the new year wish is from me
+hihihi digital but the Love is real 💖
+
+It’s here… made with love and memories.
+
+May every year ahead of us be
+soft, kind, together, happy
+and filled with lots of LOVE.
+
+Happy New Year,
+Always stay the girl with the New Year card.
+            </p>
+            <div class="signature">— With love, Pk</div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openCard() {
+    const door = document.getElementById('door');
+    door.style.animation = "knock 0.7s";
+
+    setTimeout(() => {
+        document.getElementById('cover').style.display = "none";
+        document.getElementById('cardContainer').style.display = "flex";
+        document.getElementById('bgMusic').play();
+    }, 800);
+}
+</script>
+
+</body>
+</html>
